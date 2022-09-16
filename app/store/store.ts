@@ -1,18 +1,21 @@
+import testReducer from "@/store/slice/test.slice";
 import {
-  configureStore,
-  combineReducers,
-  AnyAction,
   Action,
+  combineReducers,
+  configureStore,
   ThunkAction,
 } from "@reduxjs/toolkit";
 import { createWrapper, HYDRATE } from "next-redux-wrapper";
 
-const store = configureStore({
-  reducer: {},
+const combinedReducer = combineReducers({
+  test: testReducer,
 });
 
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
+const makeStore = () => configureStore({ reducer: combinedReducer });
+type Store = ReturnType<typeof makeStore>;
+
+export type AppDispatch = Store["dispatch"];
+export type RootState = ReturnType<Store["getState"]>;
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   RootState,
@@ -20,5 +23,4 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   Action<string>
 >;
 
-const makeStore = () => store;
-export const wrapper = createImageBitmap(makeStore);
+export const wrapper = createWrapper(makeStore);
