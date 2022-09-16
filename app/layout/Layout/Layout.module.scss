@@ -1,0 +1,22 @@
+.wrapper {
+}
+.main {
+  grid-area: m;
+}
+.header {
+  grid-area: h;
+}
+.footer {
+  grid-area: f;
+}
+.sidebar {
+  grid-area: s;
+}
+.catalog {
+  grid-area: c;
+}
+.container {
+  max-width: 1367px;
+  margin: 0 auto;
+  width: 100%;
+}

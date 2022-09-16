@@ -1,0 +1,11 @@
+.catalog {
+  display: grid;
+  grid-template-columns: auto minmax(320px, 1140px);
+  grid-template-areas: "s c";
+}
+.sidebar {
+  grid-area: s;
+}
+.content {
+  grid-area: c;
+}
