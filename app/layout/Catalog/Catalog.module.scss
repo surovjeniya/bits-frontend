@@ -1,3 +1,8 @@
+.wrapper {
+  /* position: absolute;
+  width: 100%;
+  z-index: 11; */
+}
 .catalog {
   display: grid;
   grid-template-columns: auto minmax(320px, 1140px);

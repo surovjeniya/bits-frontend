@@ -12,10 +12,9 @@ interface LayoutProps extends React.ComponentPropsWithRef<"div"> {
 export const Layout = ({ children, ...props }: LayoutProps): JSX.Element => {
   return (
     <div className={styles.wrapper} {...props}>
-      <Header className={cn(styles.header, styles.container)} />
-      <Catalog className={cn(styles.catalog, styles.container)} />
-      <main className={cn(styles.main, styles.container)}>{children}</main>
-      <Footer className={cn(styles.footer, styles.container)} />
+      <Header className={cn(styles.header)} />
+      <main className={cn(styles.main)}>{children}</main>
+      <Footer className={cn(styles.footer)} />
     </div>
   );
 };
